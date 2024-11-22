@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Collefilter">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg bg-corHeader">
+        <div class="container-fluid">
+          <!--Logo do site-->
+          <a class="navbar-brand" href="menuBootstrap.php">
+            <img src="img/logoBranca.png" width="50" height="20" class="d-inline-block align-top" alt="">
+          </a>
+          <!--Itens da Navbar-->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="menuBootstrap.php" id="navHome">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="perfilAlunoBootstrap.php" id="navHome">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="menuBootstrap.php" id="navHome">Matérias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="sobre.php" id="navHome">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="navHome" onclick="alerta()">Configurações</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="logout.php" id="navHome">Logout</a>
+              </li>
+             </ul>
+             <!-- Area onde vai ficar o nome do usuario da sessao-->
+             <ul class="navbar-nav mb-2 mb-lg-0">
+               <li>
+                 <a class="nav-link active" aria-current="page" id="navHome"> 
+                   <?php 
+                     if(!(empty($_SESSION['usuario']))){
+                       echo "Olá " . $_SESSION['usuario'];
+                     }
+                     else{
+                       header('Location: ./index.php');
+                     }
+                 ?></a>
+               </li>
+             </ul> 
+             
+            <form class="d-flex" role="search">
+              <input class="form-control-ss form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit" onclick="alerta()"><img src="img/lupa.png" class="lupa"></button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    
+</header>
+
+<!-- Conteúdo principal -->
+<main>
+    <section id="secao1">
+        <h2>Seção 1</h2>
+        <p>Este é o conteúdo da primeira seção.</p>
+    </section>
+
+    <section id="secao2">
+        <h2>Seção 2</h2>
+        <p>Este é o conteúdo da segunda seção.</p>
+    </section>
+
+    <section id="secao3">
+        <h2>Seção 3</h2>
+        <p>Este é o conteúdo da terceira seção.</p>
+    </section>
+</main>
+
+<!-- Rodapé -->
+<footer>
+    <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Script externo -->
+<script src="script.js"></script> <!-- Link para o arquivo JS -->
+</body>
+</html>
+</html>
